@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" color="danger"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Actividades</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="irAlCarrito()">
+        <ion-icon name="cart-outline" color="danger"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-card *ngFor="let actividad of actividades">
+      <img [src]="actividad.imagen" [alt]="actividad.nombre" />
+      <ion-card-header>
+        <ion-card-title>{{ actividad.nombre }}</ion-card-title>
+        <ion-card-subtitle>
+          <ion-badge [color]="obtenerColorDificultad(actividad.dificultad)">
+            {{ actividad.dificultad }}
+          </ion-badge>
+          <ion-icon name="time-outline"></ion-icon> {{ actividad.duracion }}
+        </ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        <p>{{ actividad.descripcion }}</p>
+
+        <div class="info-section">
+          <div class="location">
+            <ion-icon name="location-outline"></ion-icon>
+            {{ actividad.ubicacion }}
+          </div>
+          <div class="availability">
+            <ion-icon name="people-outline"></ion-icon>
+            Espacios: {{ actividad.espaciosDisponibles }}/{{ actividad.participantesMaximos }}
+          </div>
+        </div>
+
+        <h2 class="price">$ {{ actividad.precio }}</h2>
+
+        <div class="includes-section">
+          <h3>Incluye:</h3>
+          <ul>
+            <li *ngFor="let item of actividad.incluye">
+              <ion-icon name="checkmark-outline"></ion-icon>
+              {{ item }}
+            </li>
+          </ul>
+        </div>
+
+        <ion-button expand="block" [disabled]="actividad.espaciosDisponibles === 0"
+          (click)="reservarActividad(actividad)">
+          {{ actividad.espaciosDisponibles > 0 ? 'Reservar Ahora' : 'No hay espacios' }}
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>

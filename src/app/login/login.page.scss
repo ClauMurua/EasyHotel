@@ -1,0 +1,163 @@
+ion-content {
+    --background: #ffffff;
+}
+
+.login-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.logo-container {
+    margin: 20px 0;
+
+    .logo {
+        width: 200px;
+        height: auto;
+    }
+}
+
+h1 {
+    font-size: 24px;
+    color: #333333;
+    margin-bottom: 8px;
+}
+
+.welcome-text {
+    color: #666666;
+    font-size: 14px;
+    margin-bottom: 32px;
+}
+
+.form-field {
+    margin-bottom: 20px;
+    text-align: left;
+
+    .field-label {
+        display: block;
+        color: #ff4c6a;
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+
+    ion-item {
+        --background: #ffffff;
+        --border-color: #e0e0e0;
+        --border-radius: 8px;
+        --border-width: 1px;
+        --border-style: solid;
+        --padding-start: 12px;
+        --highlight-height: 0;
+        margin-top: 4px;
+
+        &.item-has-focus {
+            --border-color: #ff4c6a;
+        }
+    }
+
+    ion-input {
+        --placeholder-color: #999999;
+        --placeholder-opacity: 1;
+        --color: #000000;
+    }
+}
+
+.error-message {
+    color: #ff4c6a;
+    font-size: 12px;
+    margin-top: 4px;
+    padding-left: 4px;
+}
+
+.sign-in-button {
+    --background: #ff4c6a;
+    --background-activated: #ff3557;
+    --border-radius: 8px;
+    --color: #ffffff;
+    margin: 32px 0;
+    height: 44px;
+    font-size: 16px;
+}
+
+.social-text {
+    color: #666666;
+    font-size: 14px;
+    margin: 24px 0 16px;
+}
+
+.social-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+
+    ion-button {
+        --border-radius: 8px;
+        flex: 1;
+        max-width: 160px;
+        height: 44px;
+        font-size: 14px;
+
+        ion-icon {
+            margin-right: 8px;
+        }
+    }
+
+    .twitter-btn {
+        --background: #1DA1F2;
+        --background-activated: #1a94df;
+    }
+
+    .facebook-btn {
+        --background: #4267B2;
+        --background-activated: #3b5998;
+    }
+}
+
+// Media query para pantallas más pequeñas
+@media (max-width: 480px) {
+    .login-container {
+        padding: 16px;
+    }
+
+    .logo-container .logo {
+        width: 180px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    .social-buttons {
+        flex-direction: column;
+        gap: 12px;
+
+        ion-button {
+            max-width: 100%;
+        }
+    }
+}
+
+// Estilo para mensajes de error del formulario
+.validation-error {
+    ion-item {
+        --border-color: #ff4c6a;
+    }
+}
+
+// Estilo para ícono de ojo en el campo de contraseña
+.password-toggle {
+    ion-icon {
+        font-size: 20px;
+        color: #666666;
+        margin-right: 8px;
+        cursor: pointer;
+    }
+}
+
+// Mejora de la accesibilidad focus
+ion-button:focus,
+ion-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 76, 106, 0.3);
+}

@@ -1,0 +1,16 @@
+// For information on how to create your own theme, please see:
+// http://ionicframework.com/docs/theming/
+// src/theme/variables.scss
+:root {
+    // Añade estos colores personalizados
+    --ion-color-primary: #f35a89;    // Color rosa/rojizo para el botón principal
+    --ion-color-primary-contrast: #ffffff;
+    --ion-color-primary-shade: #d64f79;
+    --ion-color-primary-tint: #f46b95;
+  
+    --ion-color-facebook: #3b5998;   // Color para Facebook
+    --ion-color-facebook-contrast: #ffffff;
+    
+    --ion-color-google: #4285f4;     // Color para Google
+    --ion-color-google-contrast: #ffffff;
+  }

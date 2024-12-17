@@ -1,0 +1,150 @@
+ion-header {
+    ion-toolbar {
+        --background: #ffffff;
+
+        ion-title {
+            font-size: 18px;
+            font-weight: 500;
+            color: #000000;
+        }
+
+        ion-back-button {
+            color: #ff4f38;
+        }
+    }
+}
+
+ion-content {
+    --background: #ffffff;
+}
+
+.perfil-contenedor {
+    padding: 20px;
+}
+
+.imagen-perfil {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    position: relative;
+    cursor: pointer;
+
+    img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid #ffffff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .camera-overlay {
+        position: absolute;
+        bottom: 0;
+        right: calc(50% - 45px);
+        background: #ff4f38;
+        border-radius: 50%;
+        padding: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+        ion-icon {
+            font-size: 20px;
+            color: white;
+        }
+    }
+
+    &:hover .camera-overlay {
+        background: #e63f28;
+    }
+}
+
+.datos-personales {
+    ion-list {
+        background: transparent;
+        padding: 0;
+        margin-bottom: 20px;
+
+        ion-item {
+            --padding-start: 0;
+            --border-color: #e0e0e0;
+            --background: transparent;
+
+            ion-label {
+                h3 {
+                    font-size: 14px;
+                    color: #666666;
+                    font-weight: normal;
+                    margin-bottom: 4px;
+                }
+
+                p {
+                    font-size: 16px;
+                    color: #333333;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
+
+.resumen-seccion {
+    margin-top: 30px;
+
+    h2 {
+        font-size: 18px;
+        color: #333333;
+        margin-bottom: 15px;
+        padding-bottom: 8px;
+        border-bottom: 2px solid #f0f0f0;
+    }
+
+    ion-list {
+        background: transparent;
+
+        ion-item {
+            --padding-start: 0;
+            --border-color: #e0e0e0;
+            --background: transparent;
+
+            ion-icon {
+                color: #666666;
+                margin-right: 15px;
+                font-size: 24px;
+            }
+
+            ion-label {
+                h3 {
+                    font-size: 14px;
+                    color: #666666;
+                    font-weight: normal;
+                    margin-bottom: 4px;
+                }
+
+                p {
+                    font-size: 16px;
+                    color: #333333;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
+
+ion-list {
+    ion-item {
+        &:last-child {
+            --border-color: transparent;
+        }
+    }
+}
+
+ion-item+ion-item {
+    margin-top: 8px;
+}
+
+@media (min-width: 768px) {
+    .perfil-contenedor {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}

@@ -1,0 +1,24 @@
+// src/app/auth/pages/login/login.page.scss
+.logo-container {
+    text-align: center;
+    margin: 2rem 0;
+    
+    .logo {
+      max-width: 150px;
+    }
+  }
+  
+  .social-buttons {
+    margin-top: 2rem;
+    
+    ion-button {
+      margin-bottom: 1rem;
+    }
+  }
+  
+  .error-message {
+    color: var(--ion-color-danger);
+    font-size: 0.8rem;
+    margin: 0.5rem 0;
+    padding-left: 1rem;
+  }

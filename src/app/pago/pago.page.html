@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/carrito-compra" color="danger"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Agregar Medio de Pago</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list class="payment-list">
+    <ion-item button detail (click)="seleccionarMetodoPago('debito')">
+      <ion-icon slot="start" name="card-outline"></ion-icon>
+      <ion-label>Débito</ion-label>
+    </ion-item>
+
+    <ion-item button detail (click)="seleccionarMetodoPago('credito')">
+      <ion-icon slot="start" name="card-outline"></ion-icon>
+      <ion-label>Crédito</ion-label>
+    </ion-item>
+
+    <ion-item button detail (click)="seleccionarMetodoPago('efectivo')">
+      <ion-icon slot="start" name="cash-outline"></ion-icon>
+      <ion-label>Efectivo</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <div class="summary-section">
+    <h4>Resumen de compras</h4>
+    <ion-list class="summary-list">
+      <ion-item lines="none">
+        <ion-label>Productos</ion-label>
+        <ion-note slot="end">2</ion-note>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-label>Descuento</ion-label>
+        <ion-note slot="end">0</ion-note>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-label><strong>Total</strong></ion-label>
+        <ion-note slot="end" color="dark"><strong>$ 140.000</strong></ion-note>
+      </ion-item>
+    </ion-list>
+
+    <ion-button expand="block" color="danger" class="pay-button" (click)="pagar()">
+      Pagar
+    </ion-button>
+  </div>
+</ion-content>

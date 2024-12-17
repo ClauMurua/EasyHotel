@@ -1,0 +1,103 @@
+/* Fondo blanco para toda la página */
+ion-content {
+    --background: #ffffff;
+    /* Fondo blanco */
+}
+
+/* Estilo para el header */
+ion-header {
+    --background: #ffffff;
+    /* Fondo blanco del encabezado */
+}
+
+ion-toolbar {
+    --background: #ffffff;
+    /* Fondo blanco para el toolbar */
+}
+
+/* Flecha para volver (ion-back-button) */
+ion-back-button {
+    color: #ff9500 !important;
+    /* Flecha naranja */
+}
+
+/* Estilos para las tarjetas de platos */
+.plato-card {
+    background-color: #ffffff;
+    /* Fondo blanco para cada tarjeta */
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    color: #000000 !important;
+    /* Texto negro */
+}
+
+/* Texto en detalles de la tarjeta */
+.plato-card .detalles-plato ion-item,
+.plato-card .detalles-plato ion-label,
+.plato-card .detalles-plato ion-icon {
+    background-color: #ffffff !important;
+    /* Fondo blanco */
+    color: #000000 !important;
+    /* Texto negro */
+}
+
+/* Sección de ingredientes */
+.plato-card .ingredientes-seccion {
+    background-color: #ffffff !important;
+    /* Fondo blanco */
+    padding: 16px;
+    border-radius: 8px;
+    color: #000000 !important;
+    /* Texto negro */
+}
+
+.plato-card .ingredientes-seccion ion-item {
+    background-color: #ffffff !important;
+    /* Fondo blanco */
+    color: #000000 !important;
+    /* Texto negro */
+}
+
+.plato-card .ingredientes-seccion ion-icon {
+    color: #000000 !important;
+    /* Iconos en negro */
+}
+
+.plato-card .ingredientes-seccion ion-label {
+    color: #000000 !important;
+    /* Texto negro */
+}
+
+/* Botones y precios */
+.plato-card .precio-pedido h2 {
+    color: #000000 !important;
+    /* Precio en negro */
+}
+
+.plato-card ion-button {
+    --background: #2980b9;
+    /* Fondo azul del botón */
+    --color: #ffffff;
+    /* Texto blanco */
+    --border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Estilo general para texto en toda la página */
+ion-label,
+ion-title,
+ion-card-title,
+ion-card-subtitle,
+ion-item,
+p,
+span {
+    color: #000000 !important;
+    /* Texto negro en general */
+}
+
+/* Elimina colores heredados de ion-item */
+ion-item {
+    --background: transparent !important;
+    color: #000000 !important;
+}

@@ -1,0 +1,139 @@
+ion-header {
+    ion-toolbar {
+        --background: #ffffff;
+
+        ion-title {
+            font-size: 18px;
+            font-weight: 500;
+            color: #000000;
+        }
+
+        ion-back-button {
+            color: #ff4f38;
+        }
+    }
+}
+
+ion-content {
+    --background: #ffffff;
+}
+
+.solicitudes-section {
+    padding: 20px;
+
+    h2 {
+        font-size: 16px;
+        color: #333333;
+        margin-bottom: 20px;
+        font-weight: 500;
+    }
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.stat-item {
+    text-align: center;
+    width: 100px;
+}
+
+.circle-progress {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 8px;
+    position: relative;
+
+    &.tours {
+        border: 3px solid #98FFAE;
+    }
+
+    &.actividades {
+        border: 3px solid #FF9B9B;
+    }
+
+    &.comidas {
+        border: 3px solid #8F8FFF;
+    }
+
+    .number {
+        font-size: 24px;
+        font-weight: 500;
+        color: #333333;
+        line-height: 1;
+        margin-bottom: 2px;
+    }
+
+    .label {
+        font-size: 12px;
+        color: #666666;
+    }
+}
+
+.resumen-section {
+    padding: 0 20px;
+
+    h2 {
+        font-size: 16px;
+        color: #333333;
+        margin-bottom: 16px;
+        font-weight: 500;
+    }
+
+    ion-list {
+        background: transparent;
+
+        ion-item {
+            --padding-start: 0;
+            --border-color: #e0e0e0;
+            --background: transparent;
+            margin-bottom: 16px;
+
+            ion-icon {
+                margin-right: 12px;
+                font-size: 24px;
+
+                &[name="location-outline"] {
+                    color: #98FFAE;
+                }
+
+                &[name="accessibility-outline"] {
+                    color: #FF9B9B;
+                }
+
+                &[name="restaurant-outline"] {
+                    color: #8F8FFF;
+                }
+            }
+
+            ion-label {
+                h3 {
+                    font-size: 16px;
+                    color: #333333;
+                    margin-bottom: 4px;
+                }
+
+                p {
+                    font-size: 14px;
+                    color: #666666;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
+
+// Eliminamos bordes innecesarios
+ion-list {
+    ion-item:last-child {
+        --border-color: transparent;
+    }
+}

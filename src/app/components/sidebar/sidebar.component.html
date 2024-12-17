@@ -1,0 +1,23 @@
+<!-- src/app/components/sidebar/sidebar.component.html -->
+<ion-menu contentId="main-content" menuId="first" side="start">
+  <ion-content>
+    <!-- Sección de perfil -->
+    <div class="perfil-section">
+      <div class="nombre-usuario">{{ usuario.nombre }}</div>
+      <ion-button class="btn-perfil" fill="outline" size="small" (click)="navegarA('/perfil')">
+        MI PERFIL
+      </ion-button>
+    </div>
+
+    <!-- Menú de navegación -->
+    <ion-menu-toggle auto-hide="false">
+      <ion-list lines="none">
+        <ion-item *ngFor="let item of menuItems" [routerLink]="item.ruta" routerDirection="root"
+          [routerLinkActive]="'selected-item'" detail="false" (click)="navegarA(item.ruta)">
+          <ion-icon [name]="item.icono" slot="start"></ion-icon>
+          <ion-label>{{ item.titulo }}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-menu-toggle>
+  </ion-content>
+</ion-menu>

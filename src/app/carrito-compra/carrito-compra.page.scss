@@ -1,0 +1,240 @@
+/* Estilos generales de la página */
+ion-content.carrito-compra-page {
+    --background: #f5f5f5;
+    --padding-top: 16px;
+    --padding-bottom: 16px;
+}
+
+/* Header y toolbar */
+.carrito-compra-header {
+    ion-toolbar {
+        --background: #ffffff;
+        --color: #333333;
+        --border-style: none;
+        --border-width: 0;
+    }
+
+    ion-back-button {
+        --color: #ff9500;
+    }
+}
+
+/* Contenedor principal del carrito */
+.carrito-compra-container {
+    background: #ffffff;
+    margin: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Estilos para el carrito vacío */
+.carrito-vacio {
+    text-align: center;
+    padding: 40px 20px;
+
+    h2 {
+        color: #333333;
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+
+    p {
+        color: #666666;
+        margin-bottom: 24px;
+    }
+
+    ion-button {
+        --background: #ff9500;
+        --background-hover: #e68500;
+        --color: white;
+        --border-radius: 4px;
+        --padding-start: 24px;
+        --padding-end: 24px;
+        text-transform: none;
+        font-weight: normal;
+    }
+}
+
+/* Estilos para el resumen */
+.carrito-compra-resumen {
+    background: #ffffff;
+    padding: 16px;
+    margin-top: 16px;
+
+    ion-list {
+        background: transparent;
+        padding: 0;
+    }
+
+    ion-item {
+        --background: transparent;
+        --padding-start: 0;
+        --padding-end: 0;
+        --inner-padding-end: 0;
+        --border-style: none;
+        margin-bottom: 8px;
+
+        &:last-child {
+            margin-bottom: 16px;
+        }
+
+        ion-label {
+            color: #666666;
+            margin: 0;
+        }
+
+        ion-note {
+            color: #333333;
+            font-size: 16px;
+            padding-right: 0;
+        }
+    }
+
+    .total-row {
+        border-top: 1px solid #eeeeee;
+        padding-top: 16px;
+        margin-top: 16px;
+
+        ion-label,
+        ion-note {
+            color: #333333;
+            font-weight: bold;
+            font-size: 18px;
+        }
+    }
+}
+
+/* Botón de proceder al pago */
+.carrito-compra-continuar-btn {
+    --background: #e74c3c;
+    --background-hover: #c0392b;
+    --color: white;
+    --border-radius: 4px;
+    --padding-top: 16px;
+    --padding-bottom: 16px;
+    margin: 0;
+    margin-top: 16px;
+    text-transform: none;
+    font-weight: normal;
+
+    &[disabled] {
+        --background: #cccccc;
+        opacity: 0.7;
+    }
+}
+
+/* Estado de carga */
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+
+    ion-spinner {
+        margin-bottom: 16px;
+        color: #ff9500;
+    }
+
+    p {
+        color: #666666;
+        margin: 0;
+    }
+}
+
+/* Estado de error */
+.error-container {
+    text-align: center;
+    padding: 40px 20px;
+
+    ion-text {
+        h2 {
+            color: #e74c3c;
+            margin-bottom: 16px;
+        }
+    }
+
+    ion-button {
+        --background: #ff9500;
+        --color: white;
+        --border-radius: 4px;
+    }
+}
+
+/* Estilos para los items del carrito */
+.carrito-compra-item {
+    background: transparent;
+    padding: 0;
+
+    ion-item-sliding {
+        background: #ffffff;
+        margin-bottom: 8px;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    ion-item {
+        --background: transparent;
+        --padding-start: 16px;
+        --padding-end: 16px;
+        --inner-padding-end: 0;
+
+        ion-thumbnail {
+            --size: 80px;
+            margin-right: 16px;
+        }
+
+        .item-details {
+            h2 {
+                color: #333333;
+                font-size: 16px;
+                margin-bottom: 4px;
+            }
+
+            p {
+                color: #666666;
+                font-size: 14px;
+                margin: 0;
+            }
+
+            ion-text {
+                p {
+                    color: #ff9500;
+                    font-weight: bold;
+                    margin-top: 4px;
+                }
+            }
+        }
+    }
+
+    .carrito-compra-item-cantidad {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        ion-button {
+            --color: #ff9500;
+            --padding-start: 4px;
+            --padding-end: 4px;
+            margin: 0;
+
+            &[disabled] {
+                --color: #cccccc;
+            }
+        }
+
+        span {
+            color: #333333;
+            min-width: 24px;
+            text-align: center;
+        }
+    }
+
+    ion-item-options {
+        ion-item-option {
+            --background: #e74c3c;
+            --color: white;
+        }
+    }
+}

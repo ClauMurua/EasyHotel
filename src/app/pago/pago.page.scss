@@ -1,0 +1,66 @@
+ion-header {
+    ion-toolbar {
+        --background: #ffffff;
+        --color: #333333; // Esto cambiará el color del texto
+    }
+}
+
+ion-content {
+    --background: #ffffff;
+
+
+    .payment-list {
+        margin: 0;
+        padding: 0;
+        background: #ffffff;
+
+        ion-item {
+            --background: #ffffff;
+            --border-color: #eeeeee;
+
+            ion-icon {
+                color: #333333;
+            }
+
+            ion-label {
+                color: #333333;
+            }
+        }
+    }
+}
+
+.summary-section {
+    padding: 16px;
+    background: #ffffff;
+
+    h4 {
+        color: #333333;
+        margin: 16px 0;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .summary-list {
+        background: #ffffff;
+
+        ion-item {
+            --background: #ffffff;
+            --border-color: transparent;
+
+            ion-label {
+                color: #333333;
+            }
+
+            ion-note {
+                color: #333333;
+            }
+        }
+    }
+}
+
+.pay-button {
+    margin-top: 24px;
+    --background: #ff3b30;
+    text-transform: uppercase;
+    font-weight: 500;
+}

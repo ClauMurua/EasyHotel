@@ -1,0 +1,98 @@
+<ion-header class="carrito-compra-header">
+  <ion-toolbar class="carrito-compra-toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" color="danger"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Mi Carrito de Compra</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="carrito-compra-page">
+  <div *ngIf="cargando" class="loading-container ion-padding ion-text-center">
+    <ion-spinner></ion-spinner>
+    <p>Cargando carrito de compra...</p>
+  </div>
+
+  <div *ngIf="!cargando && error" class="error-container ion-padding ion-text-center">
+    <ion-text color="danger">
+      <h2>{{ error }}</h2>
+    </ion-text>
+    <ion-button (click)="cargarDatos()">Reintentar</ion-button>
+  </div>
+
+  <ng-container *ngIf="!cargando && !error">
+    <div *ngIf="(items$ | async)?.length === 0" class="carrito-vacio ion-padding ion-text-center">
+      <ion-icon name="cart-outline" size="large" color="medium"></ion-icon>
+      <h2>Tu carrito está vacío</h2>
+      <p>Agrega tours, actividades o comidas para comenzar</p>
+      <ion-button routerLink="/home" color="danger">
+        Explorar opciones
+      </ion-button>
+    </div>
+
+    <ng-container *ngIf="items$ | async as items">
+      <ion-list *ngIf="items.length > 0" class="carrito-compra-item">
+        <ion-item-sliding *ngFor="let item of items">
+          <ion-item>
+            <ion-thumbnail slot="start" class="carrito-compra-item-imagen">
+              <img [src]="item.imagen" [alt]="item.nombre">
+            </ion-thumbnail>
+            <ion-label class="item-details">
+              <h2>{{ item.nombre }}</h2>
+              <p>{{ item.tipo | titlecase }}</p>
+              <p *ngIf="item.duracion">
+                <ion-icon name="time-outline"></ion-icon> {{ item.duracion }}
+              </p>
+              <p *ngIf="item.rating">
+                <ion-icon name="star" color="warning"></ion-icon> {{ item.rating }}
+              </p>
+              <ion-text color="danger">
+                <p>$ {{ item.precio * item.cantidad | number:'1.2-2' }}</p>
+              </ion-text>
+            </ion-label>
+            <div class="carrito-compra-item-cantidad">
+              <ion-button fill="clear" (click)="cambiarCantidad(item, false)" [disabled]="item.cantidad <= 1">
+                <ion-icon name="remove-circle-outline"></ion-icon>
+              </ion-button>
+              <span>{{ item.cantidad }}</span>
+              <ion-button fill="clear" (click)="cambiarCantidad(item, true)">
+                <ion-icon name="add-circle-outline"></ion-icon>
+              </ion-button>
+            </div>
+          </ion-item>
+          <ion-item-options side="end">
+            <ion-item-option color="danger" (click)="confirmarEliminacion(item)">
+              <ion-icon name="trash" slot="icon-only"></ion-icon>
+            </ion-item-option>
+          </ion-item-options>
+        </ion-item-sliding>
+      </ion-list>
+
+      <div class="carrito-compra-resumen" *ngIf="resumen$ | async as resumen">
+        <ion-list>
+          <ion-item>
+            <ion-label>Subtotal</ion-label>
+            <ion-note slot="end">$ {{ resumen.subtotal | number:'1.2-2' }}</ion-note>
+          </ion-item>
+          <ion-item>
+            <ion-label>IGV (18%)</ion-label>
+            <ion-note slot="end">$ {{ resumen.impuestos | number:'1.2-2' }}</ion-note>
+          </ion-item>
+          <ion-item class="total-row">
+            <ion-label class="total-price">
+              <h2>Total</h2>
+            </ion-label>
+            <ion-note slot="end" color="danger">
+              <h2>$ {{ resumen.total | number:'1.2-2' }}</h2>
+            </ion-note>
+          </ion-item>
+        </ion-list>
+
+        <ion-button expand="block" class="carrito-compra-continuar-btn" [disabled]="resumen.items.length === 0"
+          (click)="procederPago()">
+          Proceder al Pago
+        </ion-button>
+      </div>
+    </ng-container>
+  </ng-container>
+</ion-content>

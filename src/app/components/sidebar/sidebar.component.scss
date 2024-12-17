@@ -1,0 +1,162 @@
+// src/app/components/sidebar/sidebar.component.scss
+ion-menu {
+    --width: 280px;
+    --background: white;
+}
+
+.perfil-section {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #f4f4f4;
+
+    .nombre-usuario {
+    font-size: 18px;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 10px;
+    }
+
+    .btn-perfil {
+    --border-color: #f35a89;
+    --color: #f35a89;
+    --border-radius: 20px;
+    --border-width: 1px;
+    height: 30px;
+    text-transform: none;
+    font-size: 14px;
+    }
+}
+
+.menu-section {
+    ion-list {
+    padding: 0;
+    
+    ion-item {
+        --padding-start: 20px;
+        --background: transparent;
+        --min-height: 45px;
+
+        ion-icon {
+        color: #0645ad;
+        margin-right: 15px;
+        font-size: 20px;
+        }
+
+        ion-label {
+        font-size: 14px;
+        font-weight: 400;
+        color: #0645ad !important;
+        }
+    }
+    }
+}
+
+.performance-section {
+    padding: 20px;
+
+    .section-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 20px;
+    }
+
+    .performance-item {
+    margin-bottom: 20px;
+
+    .item-title {
+        font-size: 14px;
+        color: #000;
+        margin-bottom: 8px;
+    }
+
+    .item-value {
+        font-size: 16px;
+        font-weight: 500;
+        color: #000;
+    }
+
+    .quarters {
+        display: flex;
+        gap: 10px;
+        font-size: 14px;
+        color: #000;
+
+        div {
+        padding: 4px 8px;
+        }
+    }
+
+    .booking-value {
+        font-size: 16px;
+        font-weight: 500;
+        color: #000;
+    }
+    }
+}
+
+// Ajustes específicos para los íconos
+ion-icon {
+    &[name="home-outline"],
+    &[name="stats-chart-outline"],
+    &[name="map-outline"],
+    &[name="restaurant-outline"],
+    &[name="settings-outline"] {
+    color: #0645ad;
+    }
+}
+
+// Estilo activo para items seleccionados
+.item-active {
+    --background: rgba(6, 69, 173, 0.1);
+    ion-label {
+    font-weight: 500;
+    }
+
+    .performance-section {
+        margin-top: 20px;
+        padding: 0 20px;
+      
+        .sales-title {
+          font-size: 16px;
+          font-weight: 500;
+          color: #000;
+          margin-bottom: 10px;
+        }
+      
+        .sales-item {
+          margin-bottom: 15px;
+      
+          .performance-label {
+            font-size: 14px;
+            font-weight: 400;
+            color: #000;
+            margin-bottom: 5px;
+          }
+      
+          .performance-value {
+            font-size: 14px;
+            font-weight: 500;
+            color: #000;
+          }
+      
+          .quarters {
+            display: flex;
+            gap: 15px;
+            font-size: 14px;
+            color: #000;
+      
+            span {
+              font-weight: 400;
+            }
+          }
+      
+          .booking-amount {
+            font-size: 14px;
+            color: #000;
+            font-weight: 400;
+          }
+        }
+      }
+
+}

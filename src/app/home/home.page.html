@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Inicio</ion-title>
+    <ion-buttons slot="end">
+      <ion-button *ngIf="isAdmin" (click)="crearNuevoUsuario()">
+        <ion-icon slot="icon-only" name="add-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <swiper-container class="image-slider" [pagination]="true" [autoplay]="true" [loop]="true">
+    <swiper-slide>
+      <img src="assets/images/Slide 1.jpg" alt="Tour 1">
+    </swiper-slide>
+    <swiper-slide>
+      <img src="assets/images/Slide 2.jpg" alt="Tour 2">
+    </swiper-slide>
+    <swiper-slide>
+      <img src="assets/images/Slide 3.jpg" alt="Tour 3">
+    </swiper-slide>
+  </swiper-container>
+
+  <div class="category-buttons">
+    <ion-button expand="block" class="category-button tours-button" (click)="onCategoryClick('Tours')">
+      Tours
+    </ion-button>
+    <ion-button expand="block" class="category-button activities-button" (click)="onCategoryClick('Actividades')">
+      Actividades
+    </ion-button>
+    <ion-button expand="block" class="category-button food-button" (click)="onCategoryClick('Comidas')">
+      Comidas
+    </ion-button>
+  </div>
+</ion-content>
